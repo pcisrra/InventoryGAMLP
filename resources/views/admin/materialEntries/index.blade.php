@@ -76,12 +76,12 @@
                                 {{ $materialEntry->user->name ?? '' }}
                             </td>
                             <td>
-                                <a class="btn btn-xs btn-primary" href="{{ route('admin.materials.enterMat',['codigo_material' => $ingresoMateriale->codigo_material->codigo, 'cantidad' => $ingresoMateriale->cantidad]) }}">
+                                <a class="btn btn-xs btn-primary" href="{{ route('admin.materials.enterMat',['codigo_material' => $materialEntry->material->code, 'cantidad' => $materialEntry->quantity]) }}">
                                     REGISTRAR INGRESO
                                 </a>
                                 <br/>
                                 @can('ingreso_materiale_delete')
-                                    <form action="{{ route('admin.ingreso-materiales.destroy', $ingresoMateriale->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.ingreso-materiales.destroy', $materialEntry->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="ELIMINAR">

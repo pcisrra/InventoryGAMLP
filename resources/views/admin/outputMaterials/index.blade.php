@@ -76,12 +76,12 @@
                                 {{ $outputMaterial->user->name ?? '' }}
                             </td>
                             <td>
-                                <a class="btn btn-xs btn-primary" href="{{ route('admin.materials.exitMat',['codigo_material' => $solicitude->codigo_material->codigo, 'cantidad' => $solicitude->cantidad_solicitud]) }}">
+                                <a class="btn btn-xs btn-primary" href="{{ route('admin.materials.exitMat',['codigo_material' => $outputMaterial->material->code, 'cantidad' => $output_material->output_quantity]) }}">
                                     ACEPTAR
                                 </a>
 
                                 @can('solicitude_delete')
-                                    <form action="{{ route('admin.solicitudes.destroy', $solicitude->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.solicitudes.destroy', $output_material->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="RECHAZAR">
