@@ -4,15 +4,13 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.material-entries.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.materialEntry.title_singular') }}
+                INGRESAR MATERIAL
             </a>
         </div>
     </div>
 @endcan
 <div class="card">
-    <div class="card-header">
-        LISTADO
-    </div>
+    <div class="card-header"></div>
 
     <div class="card-body">
         <div class="table-responsive">
@@ -80,8 +78,8 @@
                                     REGISTRAR INGRESO
                                 </a>
                                 <br/>
-                                @can('ingreso_materiale_delete')
-                                    <form action="{{ route('admin.ingreso-materiales.destroy', $materialEntry->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                @can('material_entries_delete')
+                                    <form action="{{ route('admin.material_entries.destroy', $materialEntry->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="ELIMINAR">

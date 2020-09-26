@@ -48,8 +48,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Materials
     Route::delete('materials/destroy', 'MaterialController@massDestroy')->name('materials.massDestroy');
     Route::resource('materials', 'MaterialController');
-    Route::get('/materials/enterMat/{codigo_material}/{cantidad}','MaterialesController@enterMat')->name('materials.enterMat');
-    Route::get('/materials/exitMat/{codigo_material}/{cantidad}','MaterialesController@exitMat')->name('materials.exitMat');
+    Route::get('/materials/enterMat/{codigo_material}/{cantidad}','MaterialController@enterMat')->name('materials.enterMat');
+    Route::get('/materials/exitMat/{codigo_material}/{cantidad}','MaterialController@exitMat')->name('materials.exitMat');
 
     // Samples
     Route::delete('samples/destroy', 'SampleController@massDestroy')->name('samples.massDestroy');

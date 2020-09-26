@@ -139,6 +139,12 @@
                 </ul>
             </li>
         @endcan
+        <li class="c-sidebar-nav-item">
+                <a href="{{ action('ReportsController@index') }}" class="c-sidebar-nav-link">
+                    <i class="fa fa-file-text c-sidebar-nav-icon"></i>
+                    Generar Reportes
+                </a>
+        </li>
         @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
             @can('profile_password_edit')
                 <li class="c-sidebar-nav-item">

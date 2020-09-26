@@ -61,7 +61,7 @@
             </div>
             <div class="form-group">
                 <label for="total_cost">{{ trans('cruds.material.fields.total_cost') }}</label>
-                <input class="form-control {{ $errors->has('total_cost') ? 'is-invalid' : '' }}" type="number" name="total_cost" id="total_cost" value="{{ old('total_cost', '') }}" step="0.01">
+                <input class="form-control {{ $errors->has('total_cost') ? 'is-invalid' : '' }}" type="number" name="total_cost" id="total_cost" value="{{ old('total_cost', '') }}" step="0.01" onclick="GetCostoTotal()" readonly>
                 @if($errors->has('total_cost'))
                     <div class="invalid-feedback">
                         {{ $errors->first('total_cost') }}
@@ -92,6 +92,13 @@
     </div>
 </div>
 
-
-
+@endsection
+@section('scripts')
+<script>
+    function GetCostoTotal(){
+        unitario = document.getElementById('unitary_cost').value;
+        cantidad = document.getElementById('quantity').value;
+        document.getElementById('total_cost').value = unitario * cantidad;
+    }
+</script>
 @endsection

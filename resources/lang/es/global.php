@@ -16,7 +16,7 @@ return [
     'filterDate'                           => 'Filtrar por fecha',
     'forgot_password'                      => 'Olvidó su contraseña?',
     'home'                                 => 'Inicio',
-    'list'                                 => 'Listar',
+    'list'                                 => '',
     'login'                                => 'Iniciar sesión',
     'login_email'                          => 'Correo',
     'login_password'                       => 'Contraseña',

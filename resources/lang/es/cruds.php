@@ -67,7 +67,7 @@ return [
     ],
     'location'         => [
         'title'          => 'Localizaciones',
-        'title_singular' => 'Localizacione',
+        'title_singular' => 'Localización',
         'fields'         => [
             'id'                 => 'ID',
             'id_helper'          => '',
@@ -141,7 +141,7 @@ return [
     ],
     'material'         => [
         'title'          => 'Materiales',
-        'title_singular' => 'Materiale',
+        'title_singular' => 'Material',
         'fields'         => [
             'id'                  => 'ID',
             'id_helper'           => '',

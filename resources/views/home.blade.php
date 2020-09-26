@@ -16,6 +16,9 @@
                     @endif
 
                     Bienvenido
+                    <br>
+                    <iframe src="https://onedrive.live.com/embed?cid=826601CFF6668224&resid=826601CFF6668224%217931&authkey=AAfMo0P1_4TFquw&em=2" width="100%" height="800" frameborder="0" scrolling="no">
+                    </iframe>
                 </div>
             </div>
         </div>

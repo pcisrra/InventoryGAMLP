@@ -4,15 +4,13 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.output-materials.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.outputMaterial.title_singular') }}
+                SOLICITAR
             </a>
         </div>
     </div>
 @endcan
 <div class="card">
-    <div class="card-header">
-        LISTADO
-    </div>
+    <div class="card-header"></div>
 
     <div class="card-body">
         <div class="table-responsive">
@@ -76,12 +74,12 @@
                                 {{ $outputMaterial->user->name ?? '' }}
                             </td>
                             <td>
-                                <a class="btn btn-xs btn-primary" href="{{ route('admin.materials.exitMat',['codigo_material' => $outputMaterial->material->code, 'cantidad' => $output_material->output_quantity]) }}">
+                                <a class="btn btn-xs btn-primary" href="{{ route('admin.materials.exitMat',['codigo_material' => $outputMaterial->material->code, 'cantidad' => $outputMaterial->output_quantity]) }}">
                                     ACEPTAR
                                 </a>
 
-                                @can('solicitude_delete')
-                                    <form action="{{ route('admin.solicitudes.destroy', $output_material->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                @can('output_material_delete')
+                                    <form action="{{ route('admin.output-materials.destroy', $outputMaterial->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="RECHAZAR">

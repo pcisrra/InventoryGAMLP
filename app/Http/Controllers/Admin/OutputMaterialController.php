@@ -12,6 +12,7 @@ use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use DB;
 
 class OutputMaterialController extends Controller
 {
@@ -38,7 +39,7 @@ class OutputMaterialController extends Controller
     public function store(StoreOutputMaterialRequest $request)
     {
         $outputMaterial = OutputMaterial::create($request->all());
-
+        DB::select("CALL updateFechaSalida()");
         return redirect()->route('admin.output-materials.index');
     }
 

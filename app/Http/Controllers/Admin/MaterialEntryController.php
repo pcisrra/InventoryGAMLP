@@ -12,6 +12,7 @@ use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use DB;
 
 class MaterialEntryController extends Controller
 {
@@ -38,7 +39,7 @@ class MaterialEntryController extends Controller
     public function store(StoreMaterialEntryRequest $request)
     {
         $materialEntry = MaterialEntry::create($request->all());
-
+        DB::select("CALL updateFechaSalida()");
         return redirect()->route('admin.material-entries.index');
     }
 
